@@ -161,6 +161,8 @@ function getInfo() {
 ==================================================*/
 
 var name = prompt('What is your first name?');
+var lastname = prompt('What is your last name?');
+
 var camelize = name.slice(-999999,1);
 var camelizeEnd = name.slice(1);
 
@@ -205,9 +207,12 @@ function getInfo() {
 	var username = document.getElementById('username').value.toLowerCase();
 	var password = document.getElementById('password').value.toLowerCase();
 
-	for( i = 0; i < login.length; i++) {
+	for(i = 0; i < login.length; i++) {
 		if(username == login[i].username && password == login[i].password) {
 			document.write('Nice! You entered the correct username and password.')
+			return;
+		} else if(username == name && password == lastname) {
+			document.write('Congrats! You guessed correctly.')
 			return;
 		}
 	}
